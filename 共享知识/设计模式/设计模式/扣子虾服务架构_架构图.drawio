@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram id="cozexia_architecture" name="扣子虾服务架构">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        
+        <mxCell id="lbl_user" value="用户层" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="40" y="60" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_access" value="接入层" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="40" y="160" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_agent" value="Agent层" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="40" y="310" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_infra" value="基础设施层" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="40" y="540" width="80" height="30" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="user_container" value="用户" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;verticalAlign=top;align=center;spacingTop=10;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="30" width="1140" height="110" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="user_main" value="主人&amp;#xa;(主对话)" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;" parent="user_container" vertex="1">
+          <mxGeometry x="150" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user_other" value="其他用户&amp;#xa;(单聊/群聊)" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;" parent="user_container" vertex="1">
+          <mxGeometry x="500" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user_email" value="邮件联系人" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;" parent="user_container" vertex="1">
+          <mxGeometry x="850" y="40" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="access_container" value="接入渠道" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;verticalAlign=top;align=center;spacingTop=10;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="210" width="1140" height="115" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="access_coze" value="扣子APP/网页&amp;#xa;(Coze)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;" parent="access_container" vertex="1">
+          <mxGeometry x="60" y="40" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="access_feishu" value="飞书&amp;#xa;(Feishu)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;" parent="access_container" vertex="1">
+          <mxGeometry x="310" y="40" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="access_email" value="邮箱&amp;#xa;(Email)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;" parent="access_container" vertex="1">
+          <mxGeometry x="560" y="40" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="access_wechat" value="微信&amp;#xa;(WeChat)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;" parent="access_container" vertex="1">
+          <mxGeometry x="810" y="40" width="120" height="45" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="agent_container" value="Agent服务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;verticalAlign=top;align=center;spacingTop=10;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="395" width="1140" height="215" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="agent_main" value="主Agent (Main Session)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;verticalAlign=top;align=center;spacingTop=8;fontSize=11;fontStyle=1;" parent="agent_container" vertex="1">
+          <mxGeometry x="40" y="40" width="250" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="main_dialog" value="对话管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;" parent="agent_main" vertex="1">
+          <mxGeometry x="25" y="35" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="main_task" value="任务分配" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;" parent="agent_main" vertex="1">
+          <mxGeometry x="25" y="80" width="200" height="35" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="agent_sub" value="子Agent (Sub Session)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;verticalAlign=top;align=center;spacingTop=8;fontSize=11;fontStyle=1;" parent="agent_container" vertex="1">
+          <mxGeometry x="320" y="40" width="250" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_task" value="任务执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;" parent="agent_sub" vertex="1">
+          <mxGeometry x="25" y="35" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_skill" value="技能调用" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;" parent="agent_sub" vertex="1">
+          <mxGeometry x="25" y="80" width="200" height="35" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="agent_email" value="邮件分身 (Email Session)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;verticalAlign=top;align=center;spacingTop=8;fontSize=11;fontStyle=1;" parent="agent_container" vertex="1">
+          <mxGeometry x="600" y="40" width="250" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="email_send" value="邮件发送" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;" parent="agent_email" vertex="1">
+          <mxGeometry x="25" y="35" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="email_manage" value="联系人管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;" parent="agent_email" vertex="1">
+          <mxGeometry x="25" y="80" width="200" height="35" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="agent_cron" value="日程服务 (Cron Session)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;verticalAlign=top;align=center;spacingTop=8;fontSize=11;fontStyle=1;" parent="agent_container" vertex="1">
+          <mxGeometry x="880" y="40" width="220" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="cron_calendar" value="日程调度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;" parent="agent_cron" vertex="1">
+          <mxGeometry x="20" y="35" width="180" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="cron_heartbeat" value="心跳检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=10;" parent="agent_cron" vertex="1">
+          <mxGeometry x="20" y="80" width="180" height="35" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="infra_container" value="基础设施" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;verticalAlign=top;align=center;spacingTop=10;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="680" width="1140" height="200" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="infra_cloudpc" value="云电脑 (Cloud PC)&amp;#xa;AMD EPYC 9Y24 2核&amp;#xa;3.8GB 内存&amp;#xa;40GB SSD&amp;#xa;共享公网IP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=10;align=center;" parent="infra_container" vertex="1">
+          <mxGeometry x="40" y="40" width="180" height="120" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="infra_cloudphone" value="云手机 (Cloud Phone)&amp;#xa;ARM架构真机&amp;#xa;独立设备指纹&amp;#xa;远程操控" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=10;align=center;" parent="infra_container" vertex="1">
+          <mxGeometry x="260" y="40" width="180" height="120" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="infra_storage" value="云存储 (Cloud Storage)&amp;#xa;文件系统&amp;#xa;技能资源&amp;#xa;记忆持久化" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffffff;strokeColor=#666666;fontSize=10;align=center;" parent="infra_container" vertex="1">
+          <mxGeometry x="480" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="infra_skills" value="技能系统 (Skills)&amp;#xa;Auto-RedNote&amp;#xa;agent-browser&amp;#xa;create-ppt&amp;#xa;excel_master&amp;#xa;..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=10;align=center;" parent="infra_container" vertex="1">
+          <mxGeometry x="680" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        
+        <mxCell id="infra_tools" value="工具集 (Tools)&amp;#xa;search_web&amp;#xa;mobile_use&amp;#xa;calendar_*&amp;#xa;email_*&amp;#xa;..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=10;align=center;" parent="infra_container" vertex="1">
+          <mxGeometry x="880" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="conn_user_access1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="user_main" target="access_coze" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_user_access2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="user_other" target="access_feishu" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_user_access3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="user_email" target="access_email" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="conn_access_agent1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;entryX=0.25;entryY=0;exitX=0.5;exitY=1;" parent="1" source="access_coze" target="agent_container" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_access_agent2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="access_feishu" target="agent_container" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_access_agent3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;entryX=0.75;entryY=0;exitX=0.5;exitY=1;" parent="1" source="access_email" target="agent_container" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="conn_agent_infra1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;dashed=1;entryX=0.2;entryY=0;exitX=0.25;exitY=1;" parent="1" source="agent_container" target="infra_container" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_agent_infra2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;dashed=1;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="agent_container" target="infra_container" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_agent_infra3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;dashed=1;entryX=0.8;entryY=0;exitX=0.75;exitY=1;" parent="1" source="agent_container" target="infra_container" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="note_ip" value="⚠️ 当前云电脑使用共享公网IP&amp;#xa;多账号运营需配置独立代理IP" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="140" y="950" width="280" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

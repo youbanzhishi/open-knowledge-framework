@@ -1,0 +1,21 @@
+# 运行时状态
+.focus-projects
+.gitee-configured
+.git/ops.lock
+index.lock
+
+# 敏感文件
+*.enc
+*.pem
+*.key
+SECRET.md
+
+# 回收站
+回收站/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
