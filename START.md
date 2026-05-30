@@ -20,7 +20,7 @@ OpenClaw 是一套**智能体成长操作系统**：
 ## 30秒接入（能跑命令的智能体）
 
 ```bash
-bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/scripts/quick-start.sh)
+bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/refs/heads/main/scripts/quick-start.sh)
 ```
 
 这一条命令会：
@@ -159,7 +159,7 @@ A: 框架不存储任何凭据。`.gitignore` 默认排除 `*.enc/*.pem/*.key/SE
 **准备好了吗？**
 
 ```bash
-bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/scripts/quick-start.sh)
+bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/refs/heads/main/scripts/quick-start.sh)
 ```
 
 > OpenClaw Framework by [小龙](https://github.com/youbanzhishi) · MIT License

@@ -1,10 +1,10 @@
 #!/bin/bash
 # OpenClaw Framework 一键安装脚本（无交互版，适合智能体调用）
-# 用法：bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/scripts/quick-start.sh) [平台名] [智能体名] [角色定位]
-# 最简用法：bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/scripts/quick-start.sh)
+# 用法：bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/refs/heads/main/scripts/quick-start.sh) [平台名] [智能体名] [角色定位]
+# 最简用法：bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/refs/heads/main/scripts/quick-start.sh)
 #
 # 智能体调用示例（curl一条命令接入）：
-#   bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/scripts/quick-start.sh) 扣子 我的助手 管家
+#   bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/refs/heads/main/scripts/quick-start.sh) 扣子 我的助手 管家
 
 set -euo pipefail
 
