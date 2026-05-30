@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.2.0",
+  "identity": {
+    "name": "OpenClaw Framework",
+    "type": "framework",
+    "description": "智能体成长操作系统——让任何智能体从'能用'到'好用'到'自己变更好用'",
+    "owner": "小龙",
+    "owner_url": "https://github.com/youbanzhishi",
+    "version": "1.0.0",
+    "license": "MIT"
+  },
+  "capabilities": [
+    "knowledge-management",
+    "agent-growth",
+    "auto-collaboration",
+    "platform-independent",
+    "infinite-extensibility"
+  ],
+  "context_awareness": {
+    "supported_platforms": ["coze", "feishu", "wechat", "any-llm"],
+    "supported_languages": ["zh-CN", "en"],
+    "entry_points": {
+      "quick_start": "https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/scripts/quick-start.sh",
+      "agent_guide": "https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/START.md",
+      "repository": "https://github.com/youbanzhishi/open-knowledge-framework",
+      "architecture": "https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/docs/ARCHITECTURE.md"
+    }
+  },
+  "core_primitives": {
+    "five_step_gate": "读→做→验→反哺→汇报 — 所有任务的标准流程",
+    "extension_registry": "新功能=注册扩展，架构本身永远不需要改",
+    "hot_rules": "踩坑自动升级成规则，防止重犯",
+    "work_order_flow": "工单按优先级处理，完成工单必须反哺",
+    "safety_irons": "删除→回收站|覆盖=犯罪|假链接=严禁|失败2次停"
+  },
+  "quick_start_command": "bash <(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/scripts/quick-start.sh)",
+  "directory_structure": {
+    "入口.md": "体系入口（首先读这个）",
+    "START.md": "智能体接入指南",
+    "基础设定/": "身份/记忆/工具经验模板",
+    "共享知识/": "蓝图/规范/设计模式",
+    "角色/": "执行者（模板+定制）",
+    "技能/": "可复用能力（模板+定制）",
+    "项目/": "产出物（模板+定制）",
+    "交接台/": "工单流转系统",
+    "scripts/": "自动化脚本",
+    "templates/": "文档模板"
+  }
+}
