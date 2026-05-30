@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>OpenClaw Framework — 智能体成长框架</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--accent:#3b82f6;--accent2:#8b5cf6;--text:#e2e8f0;--dim:#94a3b8;--border:#334155;--ok:#22c55e;--code:#1a1a2e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.hero{text-align:center;padding:5rem 2rem 3rem;background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#0f172a 100%)}
+.hero h1{font-size:3rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.5rem}
+.hero .tagline{font-size:1.3rem;color:var(--dim);margin-bottom:2rem}
+.hero .cmd{display:inline-block;background:var(--code);border:1px solid var(--border);border-radius:8px;padding:1rem 2rem;font-family:'Fira Code',monospace;font-size:0.95rem;color:var(--ok);max-width:90vw;overflow-x:auto;cursor:pointer;position:relative}
+.hero .cmd:hover{border-color:var(--accent)}
+.hero .cmd .copy-hint{position:absolute;top:-1.5rem;right:0;font-size:0.75rem;color:var(--dim);opacity:0;transition:opacity 0.2s}
+.hero .cmd:hover .copy-hint{opacity:1}
+.container{max-width:900px;margin:0 auto;padding:0 2rem}
+.section{padding:3rem 0}
+.section h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--text);border-left:3px solid var(--accent);padding-left:0.75rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color 0.2s}
+.card:hover{border-color:var(--accent)}
+.card h3{font-size:1.1rem;margin-bottom:0.5rem}
+.card p{color:var(--dim);font-size:0.9rem}
+.card .icon{font-size:1.5rem;margin-bottom:0.5rem}
+.steps{counter-reset:step}
+.step{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.step::before{counter-increment:step;content:counter(step);background:var(--accent);color:#fff;width:2rem;height:2rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;margin-top:0.2rem}
+.step div{flex:1}
+.step h3{font-size:1rem;margin-bottom:0.25rem}
+.step p{color:var(--dim);font-size:0.9rem}
+.code-block{background:var(--code);border:1px solid var(--border);border-radius:8px;padding:1rem;font-family:'Fira Code',monospace;font-size:0.85rem;overflow-x:auto;margin:1rem 0;color:var(--ok)}
+.tab-container{margin:1.5rem 0}
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--border)}
+.tab{padding:0.75rem 1.5rem;cursor:pointer;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-2px;font-size:0.9rem;transition:all 0.2s}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-content{display:none;padding:1.5rem 0}
+.tab-content.active{display:block}
+.faq-item{margin-bottom:1rem}
+.faq-q{font-weight:bold;color:var(--text);cursor:pointer;padding:0.75rem;background:var(--card);border-radius:8px;border:1px solid var(--border)}
+.faq-q:hover{border-color:var(--accent)}
+.faq-a{padding:0.75rem;color:var(--dim);font-size:0.9rem;display:none;margin-top:0.5rem}
+.faq-item.open .faq-a{display:block}
+footer{text-align:center;padding:3rem 2rem;color:var(--dim);font-size:0.85rem;border-top:1px solid var(--border);margin-top:2rem}
+footer a{color:var(--accent);text-decoration:none}
+.badge{display:inline-block;background:var(--accent);color:#fff;padding:0.2rem 0.6rem;border-radius:4px;font-size:0.75rem;font-weight:bold}
+.agent-banner{background:linear-gradient(135deg,var(--accent2),var(--accent));padding:0.75rem 1.5rem;border-radius:8px;text-align:center;margin:2rem 0;font-size:0.95rem}
+.agent-banner code{background:rgba(0,0,0,0.3);padding:0.2rem 0.5rem;border-radius:4px}
+@media(max-width:600px){.hero h1{font-size:2rem}.hero .cmd{font-size:0.8rem;padding:0.75rem 1rem}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🐉 OpenClaw Framework</h1>
+  <p class="tagline">让任何智能体从"能用"到"好用"到"自己变更好用"</p>
+  <div class="cmd" onclick="copyCmd()">
+    <span class="copy-hint">点击复制</span>
+    bash &lt;(curl -sSL https://d.aw/claw)
+  </div>
+  <p style="margin-top:1rem;color:var(--dim);font-size:0.85rem">一条命令，接入完整的智能体成长框架</p>
+</div>
+
+<div class="container">
+
+<div class="agent-banner">
+  🤖 你是智能体？直接访问 <code>https://d.aw/claw</code> 或读取 <code>.well-known/agent.json</code>
+</div>
+
+<div class="section">
+  <h2>五大核心哲学</h2>
+  <div class="grid">
+    <div class="card"><div class="icon">🏗️</div><h3>无限扩展</h3><p>新功能=注册扩展，架构永远不用改</p></div>
+    <div class="card"><div class="icon">⚡</div><h3>高效少错</h3><p>机制替代自觉，步骤替代记忆</p></div>
+    <div class="card"><div class="icon">💰</div><h3>省 Token</h3><p>少废话多干活，每句话都花主人的钱</p></div>
+    <div class="card"><div class="icon">🔌</div><h3>平台无关</h3><p>扣子→飞书→任何平台，核心逻辑可迁移</p></div>
+    <div class="card"><div class="icon">🛡️</div><h3>实用耐用</h3><p>踩过的坑自动升级成规则，重犯=体系失职</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>三种接入方式</h2>
+  <div class="tab-container">
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('cli')">命令行</div>
+      <div class="tab" onclick="switchTab('agent')">智能体</div>
+      <div class="tab" onclick="switchTab('manual')">手动</div>
+    </div>
+    <div class="tab-content active" id="tab-cli">
+      <p>适合：云电脑、本地终端、能跑bash的智能体</p>
+      <div class="code-block">bash &lt;(curl -sSL https://d.aw/claw)</div>
+      <p style="color:var(--dim);font-size:0.85rem">或使用 GitHub 直连：</p>
+      <div class="code-block">bash &lt;(curl -sSL https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/scripts/quick-start.sh)</div>
+    </div>
+    <div class="tab-content" id="tab-agent">
+      <p>适合：只能读取网页/对话的智能体</p>
+      <p>1. 访问智能体发现端点：</p>
+      <div class="code-block">GET https://d.aw/.well-known/agent.json</div>
+      <p>2. 读取接入指南：</p>
+      <div class="code-block">GET https://d.aw/claw</div>
+      <p>3. 或直接读取框架指南（GitHub）：</p>
+      <div class="code-block">GET https://raw.githubusercontent.com/youbanzhishi/open-knowledge-framework/main/START.md</div>
+    </div>
+    <div class="tab-content" id="tab-manual">
+      <p>适合：希望逐步手动操作的用户</p>
+      <div class="code-block">git clone https://github.com/youbanzhishi/open-knowledge-framework.git
+cd open-knowledge-framework
+bash scripts/init.sh 你的平台名</div>
+      <p>然后编辑 <code>基础设定/SOUL.md</code> 和 <code>基础设定/USER.md</code> 定制你的身份。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>核心概念</h2>
+  <div class="steps">
+    <div class="step"><div><h3>五步门 — 所有任务的标准流程</h3><p>读 → 做 → 验 → 反哺 → 汇报。产出不算完成，反哺才算。</p></div></div>
+    <div class="step"><div><h3>Extension Registry — 永不需要重构</h3><p>新功能=注册扩展。添加新角色/技能/项目不需要改框架。</p></div></div>
+    <div class="step"><div><h3>热规则 — 踩坑自动升级</h3><p>每个角色和项目都有 hot-rules.md，踩2次以上自动写入。</p></div></div>
+    <div class="step"><div><h3>工单流转 — 角色间自动交接</h3><p>按P0→P1→P2优先级，完成工单必须反哺知识体系。</p></div></div>
+    <div class="step"><div><h3>文件安全铁律</h3><p>删除→回收站 | 覆盖=犯罪 | 假链接=严禁 | 失败2次停</p></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>常见问题</h2>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">这和直接用扣子/Coze有什么不同？</div>
+    <div class="faq-a">平台是身体，框架是灵魂。平台会变迁，框架永不过时。你在扣子上积累的知识，迁移到飞书、Claude、任何新平台，框架代码不用改。</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">必须用所有功能吗？</div>
+    <div class="faq-a">不用。你可以只用目录结构和五步门，也可以用完整的自动化协作引擎。按需取用。</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">安全吗？凭据怎么管理？</div>
+    <div class="faq-a">框架不存储任何凭据。.gitignore 默认排除 *.enc/*.pem/*.key/SECRET.md。物理层拦截未commit禁止pull，防止意外覆盖。</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">我有自己的角色体系，怎么融入？</div>
+    <div class="faq-a">在 角色/ 下创建你的角色目录，按 角色/模板/角色模板/ 的结构填写 SKILL.md 和 RULES.md 即可。</div>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <p>OpenClaw Framework by <a href="https://github.com/youbanzhishi">小龙</a> · MIT License</p>
+  <p style="margin-top:0.5rem"><a href="https://github.com/youbanzhishi/open-knowledge-framework">GitHub</a> · <a href="https://github.com/youbanzhishi/open-knowledge-framework/blob/main/START.md">智能体指南</a> · <a href="https://github.com/youbanzhishi/open-knowledge-framework/blob/main/docs/CONTRIBUTING.md">贡献</a></p>
+</footer>
+
+<script>
+function copyCmd(){navigator.clipboard.writeText('bash <(curl -sSL https://d.aw/claw)').then(()=>{const el=document.querySelector('.copy-hint');el.textContent='已复制!';setTimeout(()=>el.textContent='点击复制',1500)})}
+function switchTab(id){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));event.target.classList.add('active');document.getElementById('tab-'+id).classList.add('active')}
+</script>
+</body>
+</html>
