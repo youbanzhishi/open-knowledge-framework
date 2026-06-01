@@ -1,0 +1,57 @@
+name: Framework Sync Check
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for private info leak
+        run: |
+          # 检查是否有邮箱、手机号、密钥等敏感信息
+          echo "🔍 Checking for private information..."
+          FOUND=0
+          # 检查非模板文件中的手机号
+          if grep -rn --include="*.md" --include="*.sh" -E '1[3-9][0-9]{9}' . 2>/dev/null | grep -v 'TEMPLATE\|template\|示例\|example'; then
+            echo "⚠️ Found phone numbers in non-template files!"
+            FOUND=1
+          fi
+          # 检查API Key/Token模式
+          if grep -rn --include="*.md" --include="*.sh" -iE '(api_key|secret|token|password)\s*[:=]\s*\S+' . 2>/dev/null | grep -v 'TEMPLATE\|template\|示例\|GITHUB_PAT\|GITEE_PAT'; then
+            echo "⚠️ Found potential secrets in files!"
+            FOUND=1
+          fi
+          # 检查@163.com等私人邮箱
+          if grep -rn --include="*.md" --include="*.sh" -E '@163\.com|@qq\.com|@gmail\.com' . 2>/dev/null | grep -v 'TEMPLATE\|template\|noreply'; then
+            echo "⚠️ Found private email addresses!"
+            FOUND=1
+          fi
+          if [ "$FOUND" = "1" ]; then
+            echo "❌ Private information detected! Please review before merging."
+            exit 1
+          fi
+          echo "✅ No private information leaked."
+      - name: Validate directory structure
+        run: |
+          echo "🔍 Checking required directories..."
+          for dir in "基础设定" "共享知识" "角色" "技能" "项目" "交接台" "scripts" "templates" ".well-known"; do
+            if [ ! -d "$dir" ]; then
+              echo "⚠️ Missing directory: $dir"
+            else
+              echo "✅ $dir exists"
+            fi
+          done
+      - name: Validate templates are templates
+        run: |
+          echo "🔍 Checking template files use placeholder syntax..."
+          # 基础设定下的非TEMPLATE文件不应出现在公共仓库
+          for f in 基础设定/SOUL.md 基础设定/USER.md 基础设定/MEMORY.md; do
+            if [ -f "$f" ]; then
+              echo "⚠️ Found $f — should only have TEMPLATE version in public repo!"
+            fi
+          done
+          echo "✅ Template check done."
