@@ -1,0 +1,39 @@
+name: Branch Guard
+on:
+  delete:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch deletion
+        if: github.event_name == 'delete'
+        run: |
+          echo "🚨 警告：检测到分支删除操作！"
+          echo "删除的分支: ${{ github.event.ref }}"
+          echo "操作者: ${{ github.actor }}"
+          echo "时间: $(date)"
+          echo ""
+          echo "这是一个严重的安全事件！"
+          echo "main 和 master 分支不允许被删除。"
+          # TODO: 接入通知系统（飞书/邮件）
+
+      - name: Check force push on protected branches
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        run: |
+          echo "📊 受保护分支推送记录"
+          echo "分支: ${{ github.ref }}"
+          echo "操作者: ${{ github.actor }}"
+          echo "提交: ${{ github.sha }}"
+          echo "时间: $(date)"
+          echo "推送前: ${{ github.event.before }}"
+          echo "推送后: ${{ github.event.after }}"
+          
+          # 检测是否为强推（before为0000表示新建或强推覆盖）
+          if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            echo "⚠️ 检测到可能的强推操作（before为零SHA）"
+          fi
