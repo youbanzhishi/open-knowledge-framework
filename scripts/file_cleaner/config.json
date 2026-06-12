@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "recycle_bin": {
+    "path": "./回收站/",
+    "retention_days": 7
+  },
+  "report": {
+    "path": "./清理记录/",
+    "filename_format": "清理报告_{date}.md"
+  },
+  "clean_rules": {
+    "temp_files": ["*.tmp", "*.temp", "*.bak", "*.cache"],
+    "empty_folders": true,
+    "duplicate_files": true,
+    "expired_files": {
+      "user_upload_processed": 7
+    }
+  },
+  "whitelist": {
+    "directories": [
+      "./基础设定/",
+      "./回收站/",
+      "./清理记录/",
+      "./技能/"
+    ],
+    "files": [
+      "./MEMORY.md",
+      "./SECRET.md",
+      "./USER.md"
+    ]
+  },
+  "protected_patterns": [
+    "基础设定/*",
+    "SECRET.md",
+    "MEMORY.md",
+    "USER.md"
+  ]
+}
