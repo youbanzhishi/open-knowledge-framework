@@ -14,8 +14,8 @@
 
 2. **多穿透方案（自动回退链）** — 按优先级自动尝试：
    - `frps`（ecs_frps凭据）→ 最稳定
-   - `cloudflared` → 速度快
-   - `localtunnel`（lt）→ 零配置备选
+   - `cloudflared quick tunnel` → 零配置快速穿透（**国内首选**）
+   - `localtunnel`（lt）→ ⚠️ 国内被ICP备案拦截，仅海外可用
    - `ssh -R` → 自有VPS
 
 3. **项目部署访问** — OpenDAW/OpenLink/OpenVault 等项目启动后，直接穿透访问 Web UI
@@ -145,13 +145,54 @@ bash 技能/媒体预览技能/start-server.sh
 # → 在 VPS 上 curl http://localhost:8787 访问
 ```
 
-## 内网穿透历史经验（2026-05-12）
+## 内网穿透历史经验（持续更新）
 
 | 问题 | 原因 | 解决 |
 |------|------|------|
 | Python http.server 中文乱码 | 未设置 charset=utf-8 | 改用 Node.js HTTP 服务器 |
 | 中文目录 URL 404 | URL 未解码（%XX） | Node.js 中使用 decodeURIComponent |
 | cloudflared SIGSEGV | bin 与内核不兼容 | 自动回退到 localtunnel |
+| localtunnel 国内无法访问 | lts.dev 域名被ICP备案拦截 | **改用 cloudflared quick tunnel** |
+| Vite dev server "Blocked request" | Vite 8 检查 Host header | `server: { allowedHosts: true }` |
+| cloudflared `allowedHosts: 'all'` 报错 | Vite 8 不支持字符串 'all' | 用 `allowedHosts: true`（布尔值） |
+| 多端口需多隧道 | 每个隧道只绑一个端口 | 启动多个 cloudflared 实例 |
+
+### cloudflared quick tunnel 快速用法（无需 Cloudflare 账号）
+
+**最简一行穿透**，不需要 login / tunnel create / config.yml：
+
+```bash
+# 一键穿透本地端口（自动生成 trycloudflare.com 临时链接）
+nohup cloudflared tunnel --url http://localhost:5173 > /tmp/cf-box.log 2>&1 &
+
+# 等5秒提取公网URL
+sleep 5 && grep -oP 'https://[a-z0-9-]+\.trycloudflare\.com' /tmp/cf-box.log | tail -1
+# → https://xxx-yyy-zzz.trycloudflare.com
+```
+
+**多端口多站点并行穿透**：
+```bash
+# 同时穿透3个Vite dev server
+nohup cloudflared tunnel --url http://localhost:5173 > /tmp/cf-box.log 2>&1 &
+nohup cloudflared tunnel --url http://localhost:5174 > /tmp/cf-ma.log 2>&1 &
+nohup cloudflared tunnel --url http://localhost:5175 > /tmp/cf-mi.log 2>&1 &
+```
+
+**Vite 项目穿透必配**（Vite 8+）：
+```js
+// vite.config.js
+export default defineConfig({
+  server: {
+    host: '0.0.0.0',  // 允许外部访问
+    allowedHosts: true  // Vite 8 语法，允许 cloudflared 域名访问
+  }
+})
+```
+
+**注意事项**：
+- trycloudflare.com 链接是临时的，每次重启 cloudflared 会生成新链接
+- 链接无密码保护，任何人可访问，不用于敏感内容
+- `pkill -f cloudflared` 一键停止所有隧道
 
 ## 文件结构
 
