@@ -1,0 +1,52 @@
+# ============================================================
+# rustfmt 配置 - 代码格式统一
+#
+# 用途：所有 Rust 项目共用同一套代码格式规范
+#
+# 使用方式：
+#   复制到项目根目录的 rustfmt.toml
+#   运行: cargo fmt
+# ============================================================
+
+# 最大行宽（默认100，Rust官方建议100）
+max_width = 100
+
+# 缩进空格数
+tab_spaces = 4
+
+# 使用空格缩进（不使用tab）
+hard_tabs = false
+
+# 函数参数换行策略
+# "Tall"：参数多时垂直排列
+fn_params_layout = "Tall"
+
+# 导入分组和排序
+imports_granularity = "Crate"
+
+# 重新排序导入
+reorder_imports = true
+
+# 重新排序模块声明
+reorder_modules = true
+
+# 结构体字面量宽度
+struct_lit_width = 18
+
+# 单行 if-else 表达式最大宽度
+single_line_if_else_max_width = 50
+
+# 链式调用换行策略
+chain_width = 60
+
+# 使用field_init简写（Foo { x } 而非 Foo { x: x }）
+use_field_init_shorthand = true
+
+# 使用try!宏改为?运算符（Rust 2018+）
+use_try_shorthand = false
+
+# 强制使用Unix换行符
+newline_style = "Unix"
+
+# edition
+edition = "2021"

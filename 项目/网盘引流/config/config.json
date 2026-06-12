@@ -1,0 +1,46 @@
+{
+  "projects": {
+    "resource_dir": "./网盘引流项目/",
+    "published_dir": "./网盘引流项目/已发布文章/",
+    "report_dir": "./网盘引流项目/周报/",
+    "memory_file": "./MEMORY.md"
+  },
+  "analytics": {
+    "frequency": "weekly",
+    "high_threshold": 2.0,
+    "low_threshold": 0.5,
+    "viral_threshold": 100,
+    "min_sample_size": 5
+  },
+  "platforms": {
+    "zhihu": {
+      "metrics": ["views", "likes", "comments", "shares"],
+      "weight": 1.0
+    },
+    "weibo": {
+      "metrics": ["views", "reposts", "comments", "likes"],
+      "weight": 1.0
+    },
+    "xiaohongshu": {
+      "metrics": ["views", "saves", "comments", "likes"],
+      "weight": 1.2
+    },
+    "csdn": {
+      "metrics": ["views", "comments"],
+      "weight": 0.8
+    },
+    "cnblogs": {
+      "metrics": ["views", "comments"],
+      "weight": 0.8
+    }
+  },
+  "ctfile": {
+    "session": "b2b3a30afb1a140b2ac65e33abaf6f79",
+    "api_base": "https://rest.ctfile.com/v1"
+  },
+  "notifications": {
+    "major_change": true,
+    "moderate_change": false,
+    "minor_change": false
+  }
+}

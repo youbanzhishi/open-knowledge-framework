@@ -1,0 +1,14 @@
+[Unit]
+Description=Remote Command Gateway
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/songjian/remote-gateway
+ExecStart=/usr/bin/python3 /root/songjian/remote-gateway/gateway.py
+Restart=always
+RestartSec=5
+Environment=GATEWAY_CONFIG=/root/songjian/remote-gateway/config.yaml
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,28 @@
+{
+  "scene": "旅游场景",
+  "description": "旅行出游表情，包含出发、拍照、美食、打卡等旅行元素",
+  "expression_count": 20,
+  "theme_elements": ["行李箱", "飞机", "相机", "美食", "风景", "地标", "护照", "地图"],
+  "expressions": [
+    {"name": "出发", "emotion": "兴奋", "prompt_suffix": "，拖着行李箱，表情兴奋，眼睛闪闪发光，小揪揪兴奋跳动", "text_option": "出发啦！"},
+    {"name": "到达", "emotion": "开心", "prompt_suffix": "，站在景点前，比耶手势，表情惊喜，周围有地标", "text_option": "到啦！"},
+    {"name": "拍照", "emotion": "开心", "prompt_suffix": "，举起相机，表情元气，周围有风景背景", "text_option": "拍一张~"},
+    {"name": "美食", "emotion": "满足", "prompt_suffix": "，面对美食，眼睛发光，口水流下，表情幸福", "text_option": "好吃！"},
+    {"name": "累并快乐", "emotion": "疲惫", "prompt_suffix": "，拖着行李，腿软发抖，但表情开心微笑", "text_option": "累并快乐着..."},
+    {"name": "想回家", "emotion": "疲惫", "prompt_suffix": "，趴在地上，表情生无可恋，小揪揪耷拉", "text_option": "想回家了..."},
+    {"name": "风景好美", "emotion": "惊叹", "prompt_suffix": "，看着美景，眼睛变成爱心，嘴巴张开惊叹", "text_option": "好美啊~"},
+    {"name": "打卡", "emotion": "得意", "prompt_suffix": "，举着打卡牌，周围有地标建筑，表情得意", "text_option": "打卡成功！"},
+    {"name": "想你了", "emotion": "思念", "prompt_suffix": "，双手比心，表情温柔，眼睛亮晶晶", "text_option": "想你了~"},
+    {"name": "回家了", "emotion": "开心", "prompt_suffix": "，打开家门，表情幸福，小揪揪开心竖起", "text_option": "回家啦！"},
+    {"name": "好开心", "emotion": "开心", "prompt_suffix": "，原地蹦跳，眼睛弯成月牙，嘴巴大笑", "text_option": "好开心！"},
+    {"name": "太累了", "emotion": "疲惫", "prompt_suffix": "，瘫坐在地，表情生无可恋，舌头伸出", "text_option": "太累了..."},
+    {"name": "逛吃逛吃", "emotion": "满足", "prompt_suffix": "，边走边吃，手里拿着美食，表情满足", "text_option": "逛吃逛吃~"},
+    {"name": "出发啦", "emotion": "兴奋", "prompt_suffix": "，站在机场/车站，表情兴奋挥手，周围有飞机/火车", "text_option": "出发！"},
+    {"name": "到站了", "emotion": "惊喜", "prompt_suffix": "，走出车站，看着远方，表情期待", "text_option": "到站咯~"},
+    {"name": "美滋滋", "emotion": "满足", "prompt_suffix": "，眯着眼睛，表情享受，周围有小爱心", "text_option": "美滋滋~"},
+    {"name": "好热", "emotion": "崩溃", "prompt_suffix": "，扇着风，汗流浃背，表情痛苦", "text_option": "好热..."},
+    {"name": "太晒了", "emotion": "崩溃", "prompt_suffix": "，戴墨镜遮阳，表情崩溃，周围有太阳", "text_option": "太晒了！"},
+    {"name": "人从众", "emotion": "无奈", "prompt_suffix": "，被人海淹没，只露出小揪揪，表情无奈", "text_option": "全是人..."},
+    {"name": "包场", "emotion": "得意", "prompt_suffix": "，站在空无一人的景点，表情得意，小揪揪骄傲", "text_option": "包场！"}
+  ]
+}

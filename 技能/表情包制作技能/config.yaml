@@ -1,0 +1,158 @@
+# 表情包生成技能配置文件
+# 路径使用相对路径，相对于 skill-sticker-pack 目录
+
+# 通用配置
+output_base: "./output"
+template_base: "./templates"
+
+# 角色配置
+characters:
+  - name: "傲娇小汤圆"
+    description: "圆滚滚、软糯糯的傲娇小汤圆"
+    base_prompt: "白色圆润的可爱汤圆卡通形象，圆滚滚的身体，大眼睛，黑豆般的瞳孔，粉嫩的小嘴微张，头顶有一个小揪揪，坐在蒸笼里，周围有蒸汽缭绕"
+
+# 场景词库配置
+scenes:
+  基础场景:
+    expression_count: 24
+    words:
+      - "平静"
+      - "开心"
+      - "生气"
+      - "难过"
+      - "无语"
+      - "崩溃"
+      - "感动"
+      - "傲娇脸"
+      - "哼"
+      - "不理你"
+      - "才没有"
+      - "嘴硬"
+      - "真香"
+      - "OK"
+      - "嗯嗯"
+      - "好的"
+      - "收到"
+      - "没问题"
+      - "谢谢"
+      - "困了"
+      - "饿了"
+      - "无语子"
+      - "哈哈"
+      - "加油"
+
+  过年场景:
+    expression_count: 20
+    prefix: "过年"
+    words:
+      - "恭喜发财"
+      - "红包拿来"
+      - "年年有余"
+      - "心想事成"
+      - "福气满满"
+      - "万事如意"
+      - "大吉大利"
+      - "身体健康"
+      - "阖家欢乐"
+      - "新年快乐"
+      - "恭喜恭喜"
+      - "福到啦"
+      - "好运来"
+      - "发大财"
+      - "财运旺"
+      - "桃花旺"
+      - "学业进步"
+      - "升职加薪"
+      - "虎虎生威"
+      - "兔年吉祥"
+
+  打工场景:
+    expression_count: 20
+    prefix: "打工"
+    words:
+      - "上班"
+      - "加班"
+      - "摸鱼"
+      - "下班"
+      - "周一综合症"
+      - "周末万岁"
+      - "不想上班"
+      - "工资发了"
+      - "甲方爸爸"
+      - "方案改了"
+      - "好累"
+      - "崩溃"
+      - "打工人"
+      - "冲冲冲"
+      - "太难了"
+      - "加油打工人"
+      - "干饭"
+      - "摸鱼中"
+      - "划水"
+      - "摆烂"
+
+  旅游场景:
+    expression_count: 20
+    prefix: "旅游"
+    words:
+      - "出发"
+      - "到达"
+      - "拍照"
+      - "美食"
+      - "累并快乐"
+      - "想回家"
+      - "风景好美"
+      - "打卡"
+      - "想你了"
+      - "回家了"
+      - "好开心"
+      - "太累了"
+      - "逛吃逛吃"
+      - "出发啦"
+      - "到站了"
+      - "美滋滋"
+      - "好热"
+      - "太晒了"
+      - "人从众"
+      - "包场"
+
+# 图片生成配置
+image_generation:
+  style: "可爱卡通插画，简洁插画风格"
+  background: "纯白底背景"
+  quality: "高清质感"
+  aspect_ratio: "1:1"
+  seed: null  # 随机种子，null表示每次随机
+
+# 透明化处理配置
+transparency:
+  method: "remove.bg"  # 可选: remove.bg, rembg
+  remove_bg_api_key: "${REMOVE_BG_API_KEY}"
+
+# 输出素材规格
+derivatives:
+  main_image:
+    size: [240, 240]
+    format: "PNG"
+    name: "主图"
+  thumbnail:
+    size: [120, 120]
+    format: "PNG"
+    name: "缩略图"
+  chat_icon:
+    size: [100, 100]
+    format: "PNG"
+    name: "聊天面板图标"
+  cover_image:
+    size: [400, 400]
+    format: "PNG"
+    name: "表情封面图"
+  banner:
+    size: [800, 400]
+    format: "JPG"
+    name: "详情页横幅"
+
+# 批量生成配置
+batch:
+  parallel: 5  # 并行生成数量
+  delay: 2     # 生成间隔(秒)

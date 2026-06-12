@@ -1,0 +1,175 @@
+{
+  "character": "傲娇小汤圆",
+  "description": "圆滚滚、软糯糯的傲娇小汤圆，基础场景表情词库",
+  "expression_count": 24,
+  "expressions": [
+    {
+      "id": 1,
+      "name": "平静",
+      "emotion": "平静",
+      "prompt_suffix": "，表情平静，眼神淡定，嘴巴微闭",
+      "text_option": null
+    },
+    {
+      "id": 2,
+      "name": "开心",
+      "emotion": "开心",
+      "prompt_suffix": "，表情开心，大眼睛弯成月牙，嘴巴张大开心笑，露出粉嫩的舌头",
+      "text_option": null
+    },
+    {
+      "id": 3,
+      "name": "生气",
+      "emotion": "生气",
+      "prompt_suffix": "，表情生气，眉头皱起，眼睛变小，嘴巴撅起",
+      "text_option": null
+    },
+    {
+      "id": 4,
+      "name": "难过",
+      "emotion": "难过",
+      "prompt_suffix": "，表情难过，眼泪汪汪，眉毛耷拉，嘴巴向下",
+      "text_option": null
+    },
+    {
+      "id": 5,
+      "name": "无语",
+      "emotion": "无语",
+      "prompt_suffix": "，表情无语，眼睛变成省略号，嘴巴变成一条横线",
+      "text_option": null
+    },
+    {
+      "id": 6,
+      "name": "崩溃",
+      "emotion": "崩溃",
+      "prompt_suffix": "，表情崩溃，脑袋冒出青筋，眼泪四溅，双手抱头",
+      "text_option": null
+    },
+    {
+      "id": 7,
+      "name": "感动",
+      "emotion": "感动",
+      "prompt_suffix": "，表情感动，眼含热泪，嘴巴微张，手捂胸口",
+      "text_option": null
+    },
+    {
+      "id": 8,
+      "name": "傲娇脸",
+      "emotion": "傲娇",
+      "prompt_suffix": "，傲娇脸，头微微扬起，眼睛看向上方，嘴角上扬，小揪揪翘起",
+      "text_option": "哼~"
+    },
+    {
+      "id": 9,
+      "name": "哼",
+      "emotion": "傲娇",
+      "prompt_suffix": "，傲娇地哼了一声，双手叉腰，头扭向一边，小揪揪翘起",
+      "text_option": "哼！"
+    },
+    {
+      "id": 10,
+      "name": "不理你",
+      "emotion": "傲娇",
+      "prompt_suffix": "，傲娇地转过头去不看你，小揪揪甩到一边",
+      "text_option": "不理你！"
+    },
+    {
+      "id": 11,
+      "name": "才没有",
+      "emotion": "傲娇",
+      "prompt_suffix": "，脸红着否认，嘴巴撅起，挥手表示否定，小揪揪微微晃动",
+      "text_option": "才没有！"
+    },
+    {
+      "id": 12,
+      "name": "嘴硬",
+      "emotion": "傲娇",
+      "prompt_suffix": "，嘴硬的表情，耳朵微微发红，眼睛看向别处，嘴巴撅起",
+      "text_option": "才不是呢..."
+    },
+    {
+      "id": 13,
+      "name": "真香",
+      "emotion": "傲娇",
+      "prompt_suffix": "，之前嫌弃现在真香，眼睛发光，嘴巴大口吃着，表情满足，小揪揪开心地抖动",
+      "text_option": "真香！"
+    },
+    {
+      "id": 14,
+      "name": "OK",
+      "emotion": "回应",
+      "prompt_suffix": "，做出OK的手势，眼睛眯成月牙，嘴巴比划圆形",
+      "text_option": "OK~"
+    },
+    {
+      "id": 15,
+      "name": "嗯嗯",
+      "emotion": "回应",
+      "prompt_suffix": "，乖巧点头，眼睛亮晶晶，嘴巴微微点头",
+      "text_option": "嗯嗯~"
+    },
+    {
+      "id": 16,
+      "name": "好的",
+      "emotion": "回应",
+      "prompt_suffix": "，乖巧点头答应，眼睛亮晶晶，嘴巴比心",
+      "text_option": "好的~"
+    },
+    {
+      "id": 17,
+      "name": "收到",
+      "emotion": "回应",
+      "prompt_suffix": "，敬礼手势，表情认真，眼睛炯炯有神",
+      "text_option": "收到！"
+    },
+    {
+      "id": 18,
+      "name": "没问题",
+      "emotion": "回应",
+      "prompt_suffix": "，竖起大拇指，表情自信，眼睛闪闪发光",
+      "text_option": "没问题！"
+    },
+    {
+      "id": 19,
+      "name": "谢谢",
+      "emotion": "回应",
+      "prompt_suffix": "，双手合十鞠躬，眼睛弯成月牙，表情感激，小揪揪微微低下",
+      "text_option": "谢谢~"
+    },
+    {
+      "id": 20,
+      "name": "困了",
+      "emotion": "状态",
+      "prompt_suffix": "，困得眼睛眯成一条缝，脑袋一点一点，嘴巴打着哈欠，小揪揪耷拉下来",
+      "text_option": "困了..."
+    },
+    {
+      "id": 21,
+      "name": "饿了",
+      "emotion": "状态",
+      "prompt_suffix": "，肚子饿了，表情委屈，捂着肚子，眼睛可怜巴巴地看着你",
+      "text_option": "饿了..."
+    },
+    {
+      "id": 22,
+      "name": "无语子",
+      "emotion": "状态",
+      "prompt_suffix": "，无语到极致，眼睛变成蚊香，嘴巴吐出一口怨气，小揪揪无力垂下",
+      "text_option": "无语子..."
+    },
+    {
+      "id": 23,
+      "name": "哈哈",
+      "emotion": "状态",
+      "prompt_suffix": "，笑得前仰后合，眼睛笑成一条缝，嘴巴大开，笑得小揪揪直颤",
+      "text_option": "哈哈哈！"
+    },
+    {
+      "id": 24,
+      "name": "加油",
+      "emotion": "状态",
+      "prompt_suffix": "，握拳加油手势，表情元气满满，眼睛闪闪发光，小揪揪竖起来",
+      "text_option": "加油！"
+    }
+  ]
+}

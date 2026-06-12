@@ -1,0 +1,76 @@
+{
+  "skill_name": "备份打包技能",
+  "version": "1.3.0",
+  "description": "将云端文件和记忆打包成 ZIP 格式并发送邮箱，支持历史对比、独立目录打包",
+  "author": "小龙",
+  "created_at": "2026-04-24",
+  "updated_at": "2026-05-07",
+  
+  "default_config": {
+    "backup_dir": "./备份",
+    "exclude_dirs": [
+      "./备份",
+      "./回收站",
+      "./SKILL",
+      "./.skills",
+      "./.tmp",
+      "./browser",
+      "./browser_screenshots",
+      "./mobile_use",
+      "./screenshots",
+      "./imgs",
+      "./表情包",
+      "./模型",
+      "./测试目录",
+      "./用户上传",
+      "./squashfs-root",
+      "./项目文档",
+      "./服务器运维",
+      "./CI检查",
+      "./CI检查报告",
+      "./v0.23.0-CI检查",
+      "./v0.23.0-test",
+      "./demo_project",
+      "./docker",
+      "./vcmix-deploy",
+      "./VCMix-Docker-Deploy",
+      "./共享知识"
+    ],
+    "exclude_dir_names": ["build", "squashfs-root", "target", "node_modules", "附件"],
+    "exclude_extensions": [".pptx", ".zip", ".7z", ".rar", ".tar", ".tar.gz", ".wav", ".mp3", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".mp4", ".avi", ".mov", ".mkv", ".pdf", ".bin", ".dat", ".pkl", ".db", ".sqlite", ".sqlite3", ".parquet"],
+    "separate_backup_dirs": ["./专辑封面"],
+    "pending_separate_dirs": ["./表情包", "./模型"],
+    "max_file_size_mb": 100,
+    "keep_days": 3,
+    "backup_format": "zip"
+  },
+  
+  "email_config": {
+    "default_recipient": "18630620063@163.com",
+    "subject_template": "【每日备份】文件和记忆打包 - {date}",
+    "body_template": "本次备份日期：{date}\n打包文件大小：{size}\n文件数量：{count}\n\n备份内容包括：核心记忆文件、基础设定、项目文件、服务器运维等。\n\n说明：以下目录已独立打包：\n- 专辑封面（独立zip）\n以下类型文件已全局排除：wav/mp3音频、build目录、压缩包"
+  },
+  
+  "parameters": {
+    "recipient_email": {
+      "type": "string",
+      "description": "接收备份的邮箱地址",
+      "required": true
+    },
+    "backup_dir": {
+      "type": "string",
+      "description": "备份文件存放目录",
+      "default": "./备份"
+    },
+    "keep_days": {
+      "type": "integer",
+      "description": "保留最近几天的备份",
+      "default": 3
+    },
+    "custom_exclude": {
+      "type": "array",
+      "description": "额外排除的目录",
+      "default": []
+    }
+  }
+}

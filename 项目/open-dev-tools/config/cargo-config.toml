@@ -1,0 +1,56 @@
+# ============================================================
+# Cargo 配置模板（由 open-dev-tools 提供）
+#
+# 用途：
+#   1. 配置国内镜像源，解决 crates.io 访问超时
+#   2. 编译优化配置，减少构建时间和产物体积
+#   3. 内存安全配置，防止低内存环境 OOM
+#
+# 使用方式：
+#   复制到 ~/.cargo/config.toml（全局）或 项目/.cargo/config.toml（项目级）
+#   或运行: ./scripts/cargo-mirror.sh
+# ============================================================
+
+# ---------- 镜像源配置 ----------
+# 清华镜像（主源，国内最快）
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+
+# 字节跳动 rsproxy（备用源）
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
+
+# 默认使用清华镜像
+[source.crates-io]
+replace-with = "tuna"
+
+# 如需切换到 rsproxy，将上面 replace-with 改为 "rsproxy"
+
+# ---------- 编译配置 ----------
+[build]
+# 并行编译 job 数
+# 云电脑 1.8G 内存建议设为 2，防止 OOM
+# 本地开发 16G+ 内存可设为 0（自动=CPU核心数）
+jobs = 2
+
+# ---------- Release 优化配置 ----------
+[profile.release]
+# codegen-units = 1: 单线程代码生成，生成更优化的代码（更小更快）
+# 默认值 16（并行编译快但优化差）
+codegen-units = 1
+
+# LTO = thin: 轻量级链接时优化，减少产物体积，提升运行性能
+# 可选值: false / "thin" / "fat"
+# "fat" 优化最好但编译极慢，"thin" 是最佳平衡
+lto = "thin"
+
+# strip = true: 移除调试符号，减小二进制体积
+strip = true
+
+# panic = abort: panic 时直接终止而非 unwind，减小体积
+panic = "abort"
+
+# ---------- Debug 配置 ----------
+[profile.dev]
+# 开发模式也限制并行数
+debug = 1  # 最小调试信息，加快编译

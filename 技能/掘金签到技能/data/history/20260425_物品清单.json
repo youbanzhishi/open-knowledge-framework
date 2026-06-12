@@ -1,0 +1,18 @@
+{
+  "date": "2026-04-25",
+  "user_points": 738356,
+  "items": [
+    {"name": "课程5折兑换券", "points": 20000, "status": "可兑换"},
+    {"name": "异型鼠标垫（小号）", "points": 40000, "status": "可兑换"},
+    {"name": "新年限量兑换组合B(小)", "points": 300000, "status": "可兑换"},
+    {"name": "IP盲盒-随机发", "points": 350000, "status": "可兑换"},
+    {"name": "「码赛克」空调毯", "points": 390000, "status": "周三～周四开放"},
+    {"name": "筋膜枪黑色", "points": 600000, "status": "周五开放"},
+    {"name": "新年限量兑换组合B(大)", "points": 800000, "status": "矿石不足(差约6万)"},
+    {"name": "多功能早餐机", "points": 1290000, "status": "矿石不足(差约55万)"},
+    {"name": "小熊煎烤电热锅", "points": 1700000, "status": "矿石不足(差约96万)"}
+  ],
+  "available_count": 6,
+  "out_of_stock_count": 7,
+  "insufficient_points_count": 3
+}

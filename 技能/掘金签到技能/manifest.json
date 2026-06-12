@@ -1,0 +1,67 @@
+{
+  "name": "juejin-checkin",
+  "version": "1.0.0",
+  "display_name": "稀土掘金签到抽奖福利监控",
+  "description": "自动执行稀土掘金的每日签到、幸运抽奖、福利兑换查询，并监控新增可兑换物品",
+  "author": "Auto Agent",
+  "created_at": "2025-01-15",
+  "updated_at": "2025-01-15",
+  
+  "triggers": [
+    "掘金签到",
+    "稀土掘金签到",
+    "掘金抽奖",
+    "掘金福利"
+  ],
+  
+  "schedule": {
+    "enabled": true,
+    "cron": "0 8 * * *",
+    "timezone": "Asia/Shanghai",
+    "description": "每天早上8点自动执行"
+  },
+  
+  "capabilities": {
+    "browser_automation": true,
+    "email_notification": true,
+    "history_tracking": true
+  },
+  
+  "permissions": {
+    "browser": "required",
+    "email": "required"
+  },
+  
+  "config_fields": [
+    {
+      "name": "PHONE_NUMBER",
+      "type": "string",
+      "required": true,
+      "description": "用户手机号，用于验证码登录"
+    },
+    {
+      "name": "EMAIL_ADDRESS",
+      "type": "string",
+      "required": true,
+      "description": "通知邮箱地址"
+    }
+  ],
+  
+  "output_schema": {
+    "checkin_days": "number",
+    "lottery_result": "number",
+    "total_points": "number",
+    "items_count": "number",
+    "new_items": "array"
+  },
+  
+  "dependencies": {
+    "skills": ["browser"],
+    "tools": ["email_request", "browser_*"]
+  },
+  
+  "history_dir": "~/.juejin-checkin/history/",
+  
+  "migration_ready": true,
+  "portable": true
+}

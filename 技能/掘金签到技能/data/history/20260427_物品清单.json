@@ -1,0 +1,26 @@
+{
+  "date": "2026-04-27",
+  "user_points": 738530,
+  "items": [
+    {"name": "异型鼠标垫（小号）", "points": 40000, "status": "立即兑换"},
+    {"name": "课程5折兑换券", "points": 20000, "status": "立即兑换"},
+    {"name": "IP盲盒-随机发", "points": 350000, "status": "立即兑换"},
+    {"name": "「码赛克」空调毯", "points": 390000, "status": "周三～周四开放兑换"},
+    {"name": "筋膜枪黑色", "points": 600000, "status": "周五开放"},
+    {"name": "新年限量兑换组合B(小)", "points": 300000, "status": "立即兑换"},
+    {"name": "小熊煎烤电热锅", "points": 1700000, "status": "矿石不足(差约96万)"},
+    {"name": "多功能早餐机分区煎烤", "points": 1290000, "status": "矿石不足(差约55万)"}
+  ],
+  "out_of_stock_items": [
+    {"name": "美加净保湿滋养润手霜", "points": 350000, "status": "今日已抢光"},
+    {"name": "折叠收纳篮脏衣篮", "points": 380000, "status": "今日已抢光"},
+    {"name": "无线蓝牙音箱", "points": 280000, "status": "今日已抢光"},
+    {"name": "李施德林漱口水", "points": 180000, "status": "今日已抢光"},
+    {"name": "奥克斯煮蛋器蒸蛋器", "points": 290000, "status": "今日已抢光"},
+    {"name": "掘金Yoyo抱枕", "points": 150000, "status": "今日已抢光"},
+    {"name": "小米电动牙刷", "points": 1190000, "status": "今日已抢光"}
+  ],
+  "available_count": 6,
+  "out_of_stock_count": 7,
+  "insufficient_points_count": 2
+}

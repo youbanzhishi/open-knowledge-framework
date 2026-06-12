@@ -1,0 +1,28 @@
+{
+  "scene": "打工场景",
+  "description": "打工人专属表情，包含上班、加班、摸鱼等打工日常",
+  "expression_count": 20,
+  "theme_elements": ["电脑", "文件夹", "咖啡", "时钟", "加班", "工资", "甲方", "方案"],
+  "expressions": [
+    {"name": "上班", "emotion": "日常", "prompt_suffix": "，背着书包出门，表情精神抖擞，小揪揪竖起来", "text_option": "上班去！"},
+    {"name": "加班", "emotion": "疲惫", "prompt_suffix": "，趴在电脑前，眼睛变成蚊香，头发炸开，周围有时钟", "text_option": "又要加班..."},
+    {"name": "摸鱼", "emotion": "得意", "prompt_suffix": "，戴着墨镜，嘴里叼着小鱼，表情得意，小揪揪摇晃", "text_option": "摸鱼中~"},
+    {"name": "下班", "emotion": "开心", "prompt_suffix": "，冲出公司大门，手里挥舞着包，眼睛闪闪发光", "text_option": "下班啦！"},
+    {"name": "周一综合症", "emotion": "崩溃", "prompt_suffix": "，生无可恋地趴在桌上，周围有阴云和闪电", "text_option": "周一综合症..."},
+    {"name": "周末万岁", "emotion": "兴奋", "prompt_suffix": "，躺在床上，周围堆满零食，表情幸福，小揪揪开心颤抖", "text_option": "周末万岁！"},
+    {"name": "不想上班", "emotion": "抗拒", "prompt_suffix": "，抱着柱子不肯走，眼泪汪汪，表情委屈", "text_option": "不想上班..."},
+    {"name": "工资发了", "emotion": "兴奋", "prompt_suffix": "，眼睛变成钱符号，周围有金币飞舞，小揪揪兴奋跳动", "text_option": "工资发了！"},
+    {"name": "甲方爸爸", "emotion": "崩溃", "prompt_suffix": "，对着电脑崩溃，双手抱头，周围有修改标记", "text_option": "甲方爸爸..."},
+    {"name": "方案改了", "emotion": "崩溃", "prompt_suffix": "，看着被划掉的方案，表情崩溃，头发炸毛", "text_option": "方案改了十版！"},
+    {"name": "好累", "emotion": "疲惫", "prompt_suffix": "，躺在地上，四肢摊开，眼睛变成两条横线", "text_option": "好累..."},
+    {"name": "崩溃", "emotion": "崩溃", "prompt_suffix": "，原地爆炸，头发炸开，眼睛变成叉叉", "text_option": "崩了崩了..."},
+    {"name": "打工人", "emotion": "自嘲", "prompt_suffix": "，穿着工装，表情坚毅，举起拳头，小揪揪昂扬", "text_option": "打工人！"},
+    {"name": "冲冲冲", "emotion": "元气", "prompt_suffix": "，奔跑姿势，眼睛闪闪发光，周围有速度线", "text_option": "冲冲冲！"},
+    {"name": "太难了", "emotion": "无奈", "prompt_suffix": "，双手捂脸，从指缝偷看，周围有问号", "text_option": "太难了..."},
+    {"name": "加油打工人", "emotion": "鼓励", "prompt_suffix": "，握拳加油，表情元气满满，周围有星星", "text_option": "加油打工人！"},
+    {"name": "干饭", "emotion": "开心", "prompt_suffix": "，端着饭碗，眼睛发光，嘴巴大口吃着", "text_option": "干饭！"},
+    {"name": "摸鱼中", "emotion": "警惕", "prompt_suffix": "，东张西望，手里假装在看文件，表情心虚", "text_option": "在摸鱼..."},
+    {"name": "划水", "emotion": "悠闲", "prompt_suffix": "，躺在水面上，周围有波浪，表情悠闲", "text_option": "划水~"},
+    {"name": "摆烂", "emotion": "放弃", "prompt_suffix": "，躺在地上，表情死鱼眼，小揪揪无力垂下", "text_option": "摆烂了..."}
+  ]
+}

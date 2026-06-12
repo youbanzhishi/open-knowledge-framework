@@ -1,0 +1,76 @@
+# ============================================================
+# justfile - Python 项目命令模板
+#
+# 用途：为 OpenDAW/VCMix 等 Python 项目提供统一的命令入口
+#
+# 使用方式：
+#   1. 复制此文件到项目根目录
+#   2. 修改 project-dir 和 project-name 变量
+#   3. 运行: just <命令>
+# ============================================================
+
+# ---------- 项目变量（每个项目复制后修改） ----------
+project-dir := "."
+project-name := "vcmix"
+python-version := "3.12"
+
+# ---------- 默认命令 ----------
+default:
+    @just --list
+
+# ---------- 环境设置 ----------
+# 创建虚拟环境
+venv:
+    python3 -m venv .venv && .venv/bin/pip install --upgrade pip
+
+# 安装开发依赖
+setup:
+    pip install -e ".[dev]"
+
+# ---------- 构建命令 ----------
+# 构建wheel
+build:
+    python -m build
+
+# 检查wheel
+check-wheel:
+    twine check dist/*
+
+# ---------- 检查命令 ----------
+# Lint
+lint:
+    ruff check src/ tests/
+
+# 格式化
+fmt:
+    ruff format src/ tests/
+
+# 类型检查
+typecheck:
+    mypy src/
+
+# ---------- 测试命令 ----------
+# 运行测试
+test:
+    pytest tests/ -x -q
+
+# 详细测试
+test-verbose:
+    pytest tests/ -v
+
+# 带覆盖率
+test-cov:
+    pytest --cov={{project-name}} --cov-report=term-missing
+
+# ---------- Docker 命令 ----------
+# 构建core镜像
+docker-core:
+    docker build --build-arg VCMIX_PROFILE=core -t {{project-name}}:core .
+
+# 构建full镜像
+docker-full:
+    docker build --build-arg VCMIX_PROFILE=full -t {{project-name}}:full .
+
+# ---------- 清理 ----------
+clean:
+    rm -rf build/ dist/ *.egg-info .pytest_cache .mypy_cache .ruff_cache

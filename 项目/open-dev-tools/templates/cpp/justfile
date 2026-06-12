@@ -1,0 +1,73 @@
+# ============================================================
+# justfile - C++/JUCE 项目命令模板
+#
+# 用途：为 AudioFX 等 C++ JUCE 插件项目提供统一的命令入口
+#
+# 使用方式：
+#   1. 复制此文件到项目根目录
+#   2. 修改 plugin-name 和 juce-path 变量
+#   3. 运行: just <命令>
+# ============================================================
+
+# ---------- 项目变量（每个项目复制后修改） ----------
+plugin-name := "VC-EQ"
+juce-path := "../../JUCE"
+build-type := "Release"
+
+# ---------- 默认命令 ----------
+default:
+    @just --list
+
+# ---------- 环境设置 ----------
+# 克隆JUCE（如果不存在）
+setup-juce:
+    #!/usr/bin/env bash
+    if [ ! -d "{{juce-path}}" ]; then \
+        git clone --depth 1 --branch 8.0.12 https://github.com/juce-framework/JUCE.git {{juce-path}}; \
+    fi
+
+# ---------- 快速编译验证（g++ standalone，无需JUCE） ----------
+# 秒级反馈，验证DSP代码能编译
+quick-verify:
+    #!/usr/bin/env bash
+    cd {{plugin-name}} && \
+    DSP=$(find Source/DSP -name "*.cpp" | head -1) && \
+    g++ -std=c++17 -DVC_STANDALONE -O2 -I../Libs/dr_wav \
+        Source/CLI_Standalone/main.cpp $$DSP -o standalone-CLI -lm
+
+# ---------- CMake 构建 ----------
+# Configure
+configure:
+    mkdir -p {{plugin-name}}/build && \
+    cd {{plugin-name}}/build && \
+    cmake .. -G Ninja -DJUCE_PATH={{juce-path}} -DCMAKE_BUILD_TYPE={{build-type}}
+
+# 构建
+build: configure
+    cd {{plugin-name}}/build && cmake --build . --config {{build-type}}
+
+# ---------- 测试 ----------
+# CLI 测试（需要sox生成测试音频）
+test:
+    #!/usr/bin/env bash
+    sox -n test_input.wav synth 3 sine 440 vol 0.5 channels 2
+    CLI=$(find {{plugin-name}}/build -name "*CLI*" -type f | head -1) && \
+    if [ -n "$$CLI" ]; then $$CLI test_input.wav test_output.wav; fi
+    rm -f test_input.wav test_output.wav
+
+# ---------- 清理 ----------
+clean:
+    rm -rf {{plugin-name}}/build
+
+# ---------- 全量构建所有插件 ----------
+build-all:
+    #!/usr/bin/env bash
+    for dir in VC-*/; do \
+        plugin=$$(basename "$$dir"); \
+        [ "$$plugin" = "VC-Plugin-Template" ] && continue; \
+        echo "=== Building $$plugin ==="; \
+        mkdir -p "$$dir/build" && cd "$$dir/build" && \
+        cmake .. -G Ninja -DJUCE_PATH={{juce-path}} -DCMAKE_BUILD_TYPE={{build-type}} && \
+        cmake --build . --config {{build-type}}; \
+        cd ../..; \
+    done

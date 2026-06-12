@@ -1,0 +1,18 @@
+# Remote Gateway 配置文件
+server:
+  host: "0.0.0.0"
+  port: 7772
+
+auth:
+  token: "xl2026cmd"
+  allowed_cidrs:
+    - "115.190.0.0/16"
+    - "101.126.0.0/16"
+
+logging:
+  file: "/var/log/remote-gateway.log"
+  max_size_mb: 10
+  backup_count: 3
+
+exec:
+  timeout: 30

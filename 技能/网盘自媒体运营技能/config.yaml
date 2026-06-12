@@ -1,0 +1,159 @@
+# 平台自动回复运营配置
+
+# 资源配置（重要：不同资源对应不同链接，严禁发错！）
+resources:
+  # PPT模板 - 工作总结类
+  - name: 工作总结PPT模板
+    type: ppt
+    link: https://url98.ctfile.com/d/66135898-162827514-66b343?p=8069
+    password: "8069"
+    keywords:
+      - PPT
+      - ppt
+      - 模板
+      - 工作
+      - 总结
+      - 汇报
+      - 述职
+      - 报告
+      - 计划
+    active: true
+    
+  # 简历模板（待上传）
+  - name: 简历模板
+    type: resume
+    link: ""
+    password: ""
+    keywords:
+      - 简历
+      - 求职
+      - 应届生
+      - CV
+    active: false
+    
+  # 考研资料（待上传）
+  - name: 考研资料
+    type: exam
+    link: ""
+    password: ""
+    keywords:
+      - 考研
+      - 政治
+      - 真题
+      - 考试
+    active: false
+    
+  # Excel模板（待上传）
+  - name: Excel模板
+    type: excel
+    link: ""
+    password: ""
+    keywords:
+      - Excel
+      - excel
+      - 表格
+      - 办公
+    active: false
+
+# 平台配置
+platforms:
+  - name: 知乎
+    enabled: true
+    check_private_message: true
+    check_comment: true  # 知乎特殊：检查评论区
+    check_qa: true       # 知乎特殊：检查问答区
+    app_name: 知乎
+    priority: 1
+    
+  - name: 小红书
+    enabled: true
+    check_private_message: true
+    check_comment: false
+    app_name: 小红书
+    priority: 2
+
+  - name: CSDN
+    enabled: false  # 暂停，需安装App或网页登录
+    check_private_message: true
+    check_comment: true
+    app_name: CSDN
+    priority: 3
+
+  - name: 博客园
+    enabled: false  # 暂停，需网页登录
+    check_private_message: false
+    check_comment: true
+    priority: 4
+
+# 检查频率
+check_interval:
+  minutes: 30
+  time_range:
+    earliest: -5
+    latest: 5
+
+# 回复模板
+reply_templates:
+  default: |
+    来了！{resource_name}资源链接：
+    链接：{link}
+    访问密码：{password}
+  
+  知乎_comment: |
+    来了！{resource_name}资源链接：{link}，密码：{password}
+  
+  小红书: |
+    宝子们，资源链接来啦～
+    链接：{link}
+    密码：{password}
+    有问题随时私信我哦～
+  
+  no_resource: |
+    抱歉，您需要的{resource_name}资源暂时没有，后续会更新~
+    您可以先看看其他资源哦～
+
+# 需求捕捉配置（重要：全自动处理，绝不放过任何引流机会！）
+demand_capture:
+  enabled: true
+  auto_process: true  # 自动处理，无需主人介入
+  delay_reply: false  # 不延迟回复，立即调用网盘变现主理技能获取资源
+  notify_owner: false  # 不再需要通知主人（全自动）
+  record_file: ./网盘资源收集/资源需求待办.md
+  
+  # 技能协作：自动调用网盘变现主理技能
+  skill_cooperation:
+    enabled: true
+    skill_path: ./自定义技能/网盘变现主理技能/SKILL.md
+    skill_name: 网盘变现主理技能
+    auto_steps:
+      - search_resource  # 搜索合规资源
+      - upload_to_ctfile  # 上传到城通网盘
+      - get_share_link    # 获取分享链接
+      - update_config     # 更新资源配置
+  
+  # 完成通知（仅记录，不打扰主人）
+  complete_template: |
+    ✅ 自动处理完成
+    需求：{resource}
+    已获取链接：{link}
+    已回复用户
+
+# 关键词匹配
+keywords:
+  resource_request:
+    - 求链接
+    - 求资源
+    - 链接过期
+    - 分享过期
+    - 有没有
+    - 怎么下载
+    - 下载链接
+    - 能分享一下吗
+    - 跪求
+    - 求求
+
+# 更新记录
+changelog:
+  - date: 2026-04-24
+    version: 1.0
+    changes: 初始版本，支持知乎、小红书

@@ -1,0 +1,28 @@
+{
+  "scene": "过年场景",
+  "description": "春节节日祝福表情，包含红包、拜年、吉祥话等元素",
+  "expression_count": 20,
+  "theme_elements": ["红灯笼", "中国结", "烟花", "鞭炮", "福字", "春联", "红包", "舞狮", "祥云", "梅花"],
+  "expressions": [
+    {"name": "恭喜发财", "emotion": "祝福", "prompt_suffix": "，双手捧着金色大红包，眼睛笑成月牙，背景有烟花和红灯笼", "text_option": "恭喜发财！"},
+    {"name": "红包拿来", "emotion": "撒娇", "prompt_suffix": "，双手伸出去要红包，眼睛亮晶晶，小揪揪开心跳动", "text_option": "红包拿来~"},
+    {"name": "年年有余", "emotion": "祝福", "prompt_suffix": "，抱着一条红色大鲤鱼，周围有水花和祥云", "text_option": "年年有余~"},
+    {"name": "心想事成", "emotion": "祝福", "prompt_suffix": "，双手合十许愿，周围有星星和闪光，背景有彩虹", "text_option": "心想事成！"},
+    {"name": "福气满满", "emotion": "祝福", "prompt_suffix": "，被福字包围，身上贴满小福字，周围有金色光芒", "text_option": "福气满满~"},
+    {"name": "万事如意", "emotion": "祝福", "prompt_suffix": "，手里举着如意，周围有祥云和梅花", "text_option": "万事如意！"},
+    {"name": "大吉大利", "emotion": "祝福", "prompt_suffix": "，抱着大橘子，周围有金色光晕和小星星", "text_option": "大吉大利~"},
+    {"name": "身体健康", "emotion": "祝福", "prompt_suffix": "，做出加油手势，周围有爱心和星星", "text_option": "身体健康！"},
+    {"name": "阖家欢乐", "emotion": "祝福", "prompt_suffix": "，站在中间，周围有家人剪影，背景是温馨的家", "text_option": "阖家欢乐~"},
+    {"name": "新年快乐", "emotion": "祝福", "prompt_suffix": "，举着烟花棒，周围有烟花绽放，背景是星空", "text_option": "新年快乐！"},
+    {"name": "恭喜恭喜", "emotion": "祝福", "prompt_suffix": "，双手作揖拜年，周围有梅花和祥云", "text_option": "恭喜恭喜~"},
+    {"name": "福到啦", "emotion": "祝福", "prompt_suffix": "，手里拿着倒过来的福字，福字正在发光", "text_option": "福到啦！"},
+    {"name": "好运来", "emotion": "祝福", "prompt_suffix": "，被好运光环包围，周围有小星星和爱心", "text_option": "好运来~"},
+    {"name": "发大财", "emotion": "祝福", "prompt_suffix": "，被金币包围，眼睛闪闪发光，小揪揪兴奋跳动", "text_option": "发大财！"},
+    {"name": "财运旺", "emotion": "祝福", "prompt_suffix": "，站在金山银山前，周围有铜钱和元宝", "text_option": "财运旺~"},
+    {"name": "桃花旺", "emotion": "祝福", "prompt_suffix": "，周围飘落桃花瓣，害羞地捂着脸", "text_option": "桃花旺~"},
+    {"name": "学业进步", "emotion": "祝福", "prompt_suffix": "，手里拿着满分试卷，周围有书本和奖杯", "text_option": "学业进步！"},
+    {"name": "升职加薪", "emotion": "祝福", "prompt_suffix": "，站在升职台上，周围有星星和礼花", "text_option": "升职加薪！"},
+    {"name": "虎虎生威", "emotion": "祝福", "prompt_suffix": "，戴着虎头帽，做出威风姿势，周围有祥云", "text_option": "虎虎生威！"},
+    {"name": "兔年吉祥", "emotion": "祝福", "prompt_suffix": "，戴着兔子耳朵，周围有胡萝卜和花朵", "text_option": "兔年吉祥~"}
+  ]
+}

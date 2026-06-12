@@ -1,0 +1,68 @@
+{
+  "ctfile": {
+    "session": "b2b3a30afb1a140b2ac65e33abaf6f79",
+    "user_id": "66135898",
+    "default_password": "8069",
+    "api_base": "https://rest.ctfile.com/v1"
+  },
+  "platforms": {
+    "zhihu": {
+      "enabled": true,
+      "method": "app",
+      "external_link": true,
+      "style": "专业详细，标题吸引人"
+    },
+    "weibo": {
+      "enabled": true,
+      "method": "app",
+      "external_link": true,
+      "style": "简洁带话题，适合快速阅读"
+    },
+    "xiaohongshu": {
+      "enabled": true,
+      "method": "app",
+      "external_link": false,
+      "style": "种草风格，用私信引导",
+      "note": "禁止外链，用'私信获取'引导"
+    },
+    "csdn": {
+      "enabled": true,
+      "method": "manual",
+      "external_link": true,
+      "style": "技术博客风格，内容专业"
+    },
+    "cnblogs": {
+      "enabled": false,
+      "method": "manual",
+      "external_link": true,
+      "style": "程序员风格，简洁实用",
+      "note": "2026-04-25起暂停发布，待平台政策松动后再启用"
+    }
+  },
+  "resource_rules": {
+    "max_size_mb": 10,
+    "max_files_per_folder": 5,
+    "copyright_safe": true,
+    "no_duplicate": true,
+    "allowed_types": ["pptx", "docx", "xlsx", "pdf", "zip", "txt"]
+  },
+  "article_templates": {
+    "zhihu": "知乎模板：专业详细，带资源清单表格",
+    "weibo": "微博模板：简洁+话题标签",
+    "xiaohongshu": "小红书模板：种草风格+私信引导",
+    "csdn": "CSDN模板：技术博客风格",
+    "cnblogs": "博客园模板：程序员风格"
+  },
+  "analytics": {
+    "frequency": "weekly",
+    "high_performance_threshold": 2.0,
+    "low_performance_threshold": 0.5,
+    "viral_threshold": 100
+  },
+  "storage_paths": {
+    "resources": "./网盘引流项目/待上传资源/",
+    "articles": "./网盘引流项目/待发布文章/",
+    "published": "./网盘引流项目/已发布文章/",
+    "weekly_report": "./网盘引流项目/周报/"
+  }
+}

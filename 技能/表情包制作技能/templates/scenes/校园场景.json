@@ -1,0 +1,28 @@
+{
+  "scene": "校园场景",
+  "description": "校园专属表情包，包含上学、考试、毕业等校园日常",
+  "expression_count": 20,
+  "theme_elements": ["书包", "课本", "黑板", "课桌", "考试", "毕业", "操场", "图书馆", "宿舍", "食堂"],
+  "expressions": [
+    {"name": "上学", "emotion": "精神", "prompt_suffix": "，背着书包出门，表情精神抖擞，小揪揪竖起来充满干劲", "text_option": "上学去！"},
+    {"name": "迟到", "emotion": "慌张", "prompt_suffix": "，狂奔姿势，嘴巴张大喘气，手里拿着书包，头发被风吹乱", "text_option": "要迟到啦！"},
+    {"name": "作业", "emotion": "崩溃", "prompt_suffix": "，趴在作业堆里，表情崩溃，周围堆满作业本", "text_option": "作业好多..."},
+    {"name": "考试", "emotion": "紧张", "prompt_suffix": "，冷汗直流，看着试卷，手里的笔微微颤抖", "text_option": "这道题..."},
+    {"name": "满分", "emotion": "兴奋", "prompt_suffix": "，拿着100分试卷，眼睛闪闪发光，嘴巴开心大笑，小揪揪兴奋跳动", "text_option": "满分！"},
+    {"name": "不及格", "emotion": "难过", "prompt_suffix": "，拿着0分试卷，眼泪汪汪，表情委屈，小揪揪耷拉下来", "text_option": "不及格..."},
+    {"name": "上课", "emotion": "积极", "prompt_suffix": "，坐在课桌前，举手发言，表情认真专注", "text_option": "老师我！"},
+    {"name": "下课", "emotion": "兴奋", "prompt_suffix": "，冲出教室，表情欢呼，双手张开，周围有星星特效", "text_option": "下课啦！"},
+    {"name": "午休", "emotion": "困倦", "prompt_suffix": "，趴在桌上睡觉，头顶冒泡泡，周围有ZZZ符号", "text_option": "zzZ..."},
+    {"name": "图书馆", "emotion": "认真", "prompt_suffix": "，戴着眼镜看书，表情认真严肃，周围堆满书本", "text_option": "学习中..."},
+    {"name": "操场", "emotion": "元气", "prompt_suffix": "，在跑道上奔跑，周围有速度线和脚印，表情充满活力", "text_option": "跑步去！"},
+    {"name": "食堂", "emotion": "期待", "prompt_suffix": "，端着餐盘，眼睛发光，嘴巴舔舌头，表情馋嘴", "text_option": "吃什么呀~"},
+    {"name": "宿舍", "emotion": "幸福", "prompt_suffix": "，躺在床上，盖着被子，表情幸福满足，小揪揪软软垂下", "text_option": "好舒服~"},
+    {"name": "毕业", "emotion": "激动", "prompt_suffix": "，穿着学士服抛帽子，周围有彩带和泡泡，表情兴奋", "text_option": "毕业啦！"},
+    {"name": "开学", "emotion": "苦涩", "prompt_suffix": "，背着大书包，表情苦涩，垂头丧气，小揪揪耷拉", "text_option": "又要开学..."},
+    {"name": "放假", "emotion": "开心", "prompt_suffix": "，开心跳起，周围有星星和烟花特效，表情雀跃", "text_option": "放假啦！"},
+    {"name": "同桌", "emotion": "亲密", "prompt_suffix": "，和另一个汤圆坐在一起，表情开心，周围有爱心", "text_option": "好同桌！"},
+    {"name": "课间", "emotion": "得意", "prompt_suffix": "，嘴里叼着零食，表情得意，小揪揪得意摇晃", "text_option": "真香~"},
+    {"name": "补习", "emotion": "坚毅", "prompt_suffix": "，头上绑着奋斗头巾，表情坚毅，握拳加油", "text_option": "加油！"},
+    {"name": "请假", "emotion": "心虚", "prompt_suffix": "，躺在床上装病，表情心虚，眼神飘忽，小揪揪发抖", "text_option": "我不舒服..."}
+  ]
+}

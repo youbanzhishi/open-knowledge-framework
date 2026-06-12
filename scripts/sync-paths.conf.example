@@ -1,0 +1,10 @@
+# 核心设定同步路径映射
+# 格式：名称|仓库相对路径|平台相对路径
+# 以#开头为注释，空行跳过
+# SECRET.md 永远不同步（各平台凭据不同）
+#
+# 以下为扣子平台默认配置，其他平台按实际目录结构修改
+SOUL|基础设定/SOUL.md|基础设定/SOUL.md
+TOOLS|基础设定/TOOLS.md|基础设定/TOOLS.md
+USER|USER.md|USER.md
+MEMORY|基础设定/MEMORY.md|MEMORY.md
